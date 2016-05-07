@@ -25,7 +25,7 @@ using namespace std;
 
 int main(int argc, const char** argv){
 
-	Mat dst = imread("im8.jpg", CV_LOAD_IMAGE_UNCHANGED); //read the image data in the file "MyPic.JPG" and store it in 'img'
+	Mat dst = imread("im6.jpg", CV_LOAD_IMAGE_UNCHANGED); //read the image data in the file "MyPic.JPG" and store it in 'img'
 
 	     if (dst.empty()) //check whether the image is loaded or not
 	     {
@@ -83,13 +83,13 @@ int main(int argc, const char** argv){
 
 	        // line( img, x_1,y_1,x_2,y_2, Scalar(0,0,255), 2, 8 );
 
-//	         vector<Vec4i> lines_1;
-//	         	         HoughLinesP( cont_test, lines_1, 1, CV_PI/180, 90, 30, 10 );
-//	         	         for( size_t i = 0; i < lines_1.size(); i++ )
-//	         	         {
-//	         	             line( img_1, Point(lines_1[i][0], lines_1[i][1]),
-//	         	             Point(lines_1[i][2], lines_1[i][3]), Scalar(0,255,0), 3, 8 );
-//	         	         }
+	         vector<Vec4i> lines_1;
+	         	         HoughLinesP( cont_test, lines_1, 1, CV_PI/180, 90, 30, 10 );
+	         	         for( size_t i = 0; i < lines_1.size(); i++ )
+	         	         {
+	         	             line( img_1, Point(lines_1[i][0], lines_1[i][1]),
+	         	             Point(lines_1[i][2], lines_1[i][3]), Scalar(0,255,0), 3, 8 );
+	         	         }
 
 	     namedWindow("Gray", CV_WINDOW_AUTOSIZE); //create a window with the name "MyWindow"
 	     imshow("Gray", img); //display the image which is stored in the 'img' in the "MyWindow" window
