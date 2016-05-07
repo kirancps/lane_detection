@@ -57,7 +57,7 @@ int main(int argc, const char** argv){
 	     Mat contours,cont_test;
 	     Canny(gray,contours,140,350,3);
 	     /**/
-	     Canny(gray_test,cont_test,140,350,3);
+	     Canny(gray_test,cont_test,140,300,3);
 	     Mat contoursInv,c_test;
 	     threshold(contours,contoursInv,128,255,THRESH_BINARY_INV);
 	     /**/
@@ -74,17 +74,17 @@ int main(int argc, const char** argv){
 	         y_1=lines[0][1];
 	         x_2=lines[l-1][2];
 	         y_2=lines[l-1][3];
-//
-	         for( size_t i = 0; i < lines.size(); i++ )
-	         {
-	             line( img, Point(lines[i][0], lines[i][1]),
-	                 Point(lines[i][2], lines[i][3]), Scalar(0,0,255), 2, 8 );
-	         }
+////
+//	         for( size_t i = 0; i < lines.size(); i++ )
+//	         {
+//	             line( img, Point(lines[i][0], lines[i][1]),
+//	                 Point(lines[i][2], lines[i][3]), Scalar(0,0,255), 2, 8 );
+//	         }
 
 	        // line( img, x_1,y_1,x_2,y_2, Scalar(0,0,255), 2, 8 );
 
 	         vector<Vec4i> lines_1;
-	         	         HoughLinesP( cont_test, lines_1, 1, CV_PI/180, 150, 30, 10 );
+	         	         HoughLinesP( cont_test, lines_1, 1, CV_PI/180, 90, 30, 10 );
 	         	         for( size_t i = 0; i < lines_1.size(); i++ )
 	         	         {
 	         	             line( img_1, Point(lines_1[i][0], lines_1[i][1]),
